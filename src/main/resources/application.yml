@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: tire_server
+
+  datasource:
+    url: jdbc:mysql://portfolio-tire.cjea6yaog4qz.ap-northeast-2.rds.amazonaws.com:3306/portfolio_tire
+    username: eunah3693 
+    password: kkoj248624-
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.portfolio.tire_server.model
