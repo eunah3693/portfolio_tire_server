@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.portfolio.tire_server.mapper.RecommendTireMapper">
+    <select id="getRecommendTires" resultType="com.portfolio.tire_server.model.RecommendTireDTO">
+        SELECT 
+            rt.idx,
+            rt.tire_idx as tireIdx,
+            t.name,
+            t.description,
+            b.name as brandName,
+            t.color,
+            rt.created_idx as createdIdx
+        FROM recommend_tire rt
+        JOIN tire t ON rt.tire_idx = t.idx
+        JOIN brand b ON t.brand_idx = b.idx
+    </select>
+</mapper> 

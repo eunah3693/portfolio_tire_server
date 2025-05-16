@@ -4,15 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.portfolio.tire_server.mapper.TireMapper">
-    <select id="findAllTires" resultType="com.portfolio.tire_server.model.TireModel">
+    <select id="findAllTiresMapper" resultType="com.portfolio.tire_server.model.TireModel">
         SELECT * FROM portfolio_tire.tire
     </select>
 
-    <select id="findTireByIdx" resultType="com.portfolio.tire_server.model.TireModel">
+    <select id="findTireByIdxMapper" resultType="com.portfolio.tire_server.model.TireModel">
         SELECT * FROM portfolio_tire.tire WHERE idx = #{idx}
     </select>
 
-    <select id="findBrandByTireIdx" resultType="com.portfolio.tire_server.model.BrandModel">
+    <select id="findBrandByTireIdxMapper" resultType="com.portfolio.tire_server.model.BrandModel">
         SELECT b.* 
         FROM portfolio_tire.brand b
         INNER JOIN portfolio_tire.tire t ON b.idx = t.brand_idx

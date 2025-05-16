@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface TireMapper {
-    List<TireModel> findAllTires();
-    TireModel findTireByIdx(int idx);
-    BrandModel findBrandByTireIdx(int idx);
+    List<TireModel> findAllTiresMapper();
+    TireModel findTireByIdxMapper(int idx);
+    BrandModel findBrandByTireIdxMapper(int idx);
 }

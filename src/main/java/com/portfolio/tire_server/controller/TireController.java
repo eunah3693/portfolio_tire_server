@@ -14,23 +14,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@RestController
-@RequestMapping("/tire")
+@RestController // Rest API 컨트롤러 역할을 하는 어노테이션
+@RequestMapping("/tire") // API 엔드포인트 지정 
 public class TireController {
 
-    @Autowired
-    private TireService tireService;
+    @Autowired //tireService 객체를 주입해줌 : 의존성 주입 
+    private TireService tireService; // tireService 객체 생성 
 
-    @GetMapping
-    public List<TireModel> findAllTires() {
-        return tireService.getAllTires();
+    @GetMapping 
+    public List<TireModel> findAllTiresController() { // List<TireModel> : tire 모델을 리스트로 반환, findAllTires() : 모든 tire 모델을 조회하는 메서드 
+        return tireService.getAllTiresService(); // tireService 객체의 getAllTires() 메서드를 호출하여 모든 tire 모델을 조회하고 반환 
     }
 
     @GetMapping("/{idx}")
     public ResponseEntity<Map<String, Object>> getTireByIdx(@PathVariable int idx) {
-        TireModel tire = tireService.getTireByIdx(idx);
+        TireModel tire = tireService.getTireByIdxService(idx);
         if (tire != null) {
-            BrandModel brand = tireService.getBrandByTireIdx(idx);
+            BrandModel brand = tireService.getBrandByTireIdxService(idx);
             Map<String, Object> response = new HashMap<>();
             response.put("tire", tire);
             response.put("brand", brand);

@@ -14,15 +14,15 @@ public class TireService {
     @Autowired
     private TireMapper tireMapper;
 
-    public List<TireModel> getAllTires() {
-        return tireMapper.findAllTires();
+    public List<TireModel> getAllTiresService() {
+        return tireMapper.findAllTiresMapper();
     }
 
-    public TireModel getTireByIdx(int idx) {
-        return tireMapper.findTireByIdx(idx);
+    public TireModel getTireByIdxService(int idx) {
+        return tireMapper.findTireByIdxMapper(idx);
     }
 
-    public BrandModel getBrandByTireIdx(int idx) {
-        return tireMapper.findBrandByTireIdx(idx);
+    public BrandModel getBrandByTireIdxService(int idx) {
+        return tireMapper.findBrandByTireIdxMapper(idx);
     }
 } 

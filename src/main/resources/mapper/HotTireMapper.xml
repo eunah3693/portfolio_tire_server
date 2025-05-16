@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.portfolio.tire_server.mapper.HotTireMapper">
+    <select id="getHotTires" resultType="com.portfolio.tire_server.model.HotTireDTO">
+        SELECT 
+            ht.idx,
+            ht.tire_idx as tireIdx,
+            t.name,
+            t.description,
+            b.name as brandName
+        FROM hot_tire ht
+        JOIN tire t ON ht.tire_idx = t.idx
+        JOIN brand b ON t.brand_idx = b.idx
+    </select>
+</mapper> 
