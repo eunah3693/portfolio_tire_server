@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface MemberMapper {
     List<MemberModel> findAllMembers();
+    MemberModel findByIdAndPassword(String id, String password);
 }

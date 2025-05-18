@@ -6,7 +6,13 @@
 <mapper namespace="com.portfolio.tire_server.mapper.MemberMapper">
 
     <select id="findAllMembers" resultType="com.portfolio.tire_server.model.MemberModel">
-        SELECT * FROM portfolio_tire.member
+        SELECT * FROM member
+    </select>
+
+    <select id="findByIdAndPassword" resultType="com.portfolio.tire_server.model.MemberModel">
+        SELECT id, name
+        FROM member
+        WHERE id = #{id} AND password = #{password}
     </select>
 
 </mapper>

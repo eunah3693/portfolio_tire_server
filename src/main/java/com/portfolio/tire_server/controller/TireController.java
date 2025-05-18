@@ -27,7 +27,7 @@ public class TireController {
     }
 
     @GetMapping("/{idx}")
-    public ResponseEntity<Map<String, Object>> getTireByIdx(@PathVariable int idx) {
+    public ResponseEntity<Map<String, Object>> getTireByIdx(@PathVariable("idx") int idx) {
         TireModel tire = tireService.getTireByIdxService(idx);
         if (tire != null) {
             BrandModel brand = tireService.getBrandByTireIdxService(idx);

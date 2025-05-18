@@ -16,4 +16,16 @@ public class MemberService {
     public List<MemberModel> getAllMembers() {
         return memberMapper.findAllMembers();
     }
-} 
+
+    public MemberModel findByIdAndPassword(String id, String password) {
+        try {
+            MemberModel member = memberMapper.findByIdAndPassword(id, password);
+            if (member == null) {
+                throw new RuntimeException("회원을 찾을 수 없습니다.");
+            }
+            return member;
+        } catch (Exception e) {
+            throw new RuntimeException("로그인 처리 중 오류가 발생했습니다: " + e.getMessage());
+        }
+    }
+}
